@@ -1,0 +1,882 @@
+
+# Typography System Rules
+
+This document defines the typography system used throughout the Executive Leadership Portfolio project.
+
+The typography system establishes:
+
+- Visual hierarchy
+- Readability
+- Content rhythm
+- Editorial structure
+- Scanning behaviour
+- Brand expression
+- Interface consistency
+- Professional presentation
+
+The typography direction is editorial, sophisticated, contemporary, human-centred, and timeless.
+
+Typography is one of the primary visual foundations of the website. It should communicate the client's leadership presence, professional credibility, experience, and personality.
+
+The website must not adopt the typography conventions of a generic SaaS product, developer portfolio, or corporate dashboard.
+
+---
+
+# 1. Source of Truth
+
+The single source of truth for implementation-ready typography tokens is:
+
+`design-tokens.css`
+
+The official brand identity reference is:
+
+`assets/Basma-Alawee-Brand-identity copy.pdf`
+
+These files serve complementary purposes:
+
+- `Basma-Alawee-Brand-identity copy.pdf
+` provides the client's established brand identity and typography guidelines.
+- `design-tokens.css` provides the existing typography tokens and implementation values.
+- `typography.md` defines how typography should be applied throughout the website.
+- `agent.md` establishes the overall project direction.
+- `SKILL.md` defines the design and development methodology.
+
+### Implementation Rules
+
+1. Inspect the complete `design-tokens.css` file before implementing typography.
+2. Identify the existing font-family, font-size, font-weight, line-height, and letter-spacing tokens.
+3. Reuse existing typography tokens wherever applicable.
+4. Do not invent token names or assume that specific typography values exist.
+5. Do not duplicate existing font definitions.
+6. Do not introduce a competing typography system.
+7. Do not arbitrarily overwrite existing typography values.
+8. If a required token is missing, identify the gap before proposing an addition.
+9. Check the brand identity PDF for any additional official typography requirements.
+10. Preserve the two established typefaces and their intended roles.
+
+Typography decisions must remain consistent across all website sections and reusable components.
+
+---
+
+# 2. Typography Philosophy
+
+The typography system is designed to create:
+
+- A refined editorial experience
+- Strong visual hierarchy
+- Professional credibility
+- Calm readability
+- Contemporary presentation
+- Elegant content composition
+- Clear information architecture
+- A distinctive personal brand
+
+The overall typographic character should feel:
+
+- Sophisticated
+- Confident
+- Warm
+- Thoughtful
+- Refined
+- Spacious
+- Human
+- Timeless
+
+Typography should carry much of the website's visual identity, supported by thoughtful spacing, composition, imagery, and the established brand colour palette.
+
+The relationship between serif display typography and sans-serif supporting typography should create a deliberate editorial contrast.
+
+Avoid excessive styling, decorative type treatments, and unnecessary typographic complexity.
+
+---
+
+# 3. Font Family
+
+The website uses two established typefaces.
+
+## 3.1 Display Typeface: Cormorant Garamond
+
+**Font family:** Cormorant Garamond
+
+**Primary role:** Editorial display typography.
+
+Cormorant Garamond should be used for:
+
+- Hero headlines
+- Main page titles
+- Major section headings
+- Prominent editorial statements
+- Featured quotations
+- Selected pull quotes
+- Important introductory statements
+- Large display text
+- Prominent writing and publication titles
+
+### Design Character
+
+Cormorant Garamond should contribute:
+
+- Elegance
+- Editorial sophistication
+- Timelessness
+- Expressiveness
+- Intellectual character
+- Visual distinction
+
+Its application should feel intentional and refined.
+
+### Usage Guidelines
+
+- Use it primarily for prominent display text.
+- Preserve sufficient whitespace around large headings.
+- Allow the typeface to establish an editorial tone.
+- Use appropriate font weights based on the available font files and existing tokens.
+- Pay attention to line breaks and headline composition.
+- Avoid excessively long lines of display text.
+- Avoid using it indiscriminately for every text element.
+
+Cormorant Garamond should provide the distinctive display personality of the website.
+
+## 3.2 Supporting Typeface: DM Sans
+
+**Font family:** DM Sans
+
+**Primary role:** Body typography and interface typography.
+
+DM Sans should be used for:
+
+- Body paragraphs
+- Biography content
+- Navigation
+- Buttons
+- Links
+- Labels
+- Captions
+- Metadata
+- Supporting descriptions
+- Content summaries
+- Form labels and inputs
+- Footer content
+- General interface elements
+
+### Design Character
+
+DM Sans should contribute:
+
+- Clarity
+- Readability
+- Modernity
+- Professionalism
+- Accessibility
+- Visual consistency
+
+### Usage Guidelines
+
+- Use DM Sans consistently for supporting content.
+- Prioritise readability over decorative styling.
+- Maintain comfortable line lengths.
+- Use consistent font weights.
+- Avoid excessive bolding.
+- Maintain a clear distinction between headings and supporting content.
+
+DM Sans should provide the functional and readable foundation of the website.
+
+---
+
+# 4. Font Pairing Rules
+
+Cormorant Garamond and DM Sans must work together as one coherent typography system.
+
+The contrast between the two typefaces is intentional.
+
+### Primary pairing
+
+- Cormorant Garamond: Display and editorial headings.
+- DM Sans: Body text and interface elements.
+
+### Pairing Principles
+
+1. Use Cormorant Garamond to establish visual character and editorial hierarchy.
+2. Use DM Sans to support comprehension, navigation, and information delivery.
+3. Maintain a clear distinction between display and supporting typography.
+4. Avoid mixing the two typefaces randomly within the same text block.
+5. Avoid using Cormorant Garamond for dense paragraphs or complex interface labels.
+6. Avoid using DM Sans for every major heading simply for convenience.
+7. Maintain consistent typography roles throughout the website.
+
+The two typefaces should complement each other without competing for attention.
+
+---
+
+# 5. Font Fallbacks
+
+Fallback fonts should preserve readability and reasonable layout stability if the preferred font cannot load.
+
+### Cormorant Garamond fallback
+
+Use an appropriate serif fallback stack:
+
+`"Cormorant Garamond", Georgia, "Times New Roman", serif`
+
+### DM Sans fallback
+
+Use an appropriate sans-serif fallback stack:
+
+`"DM Sans", Arial, Helvetica, sans-serif`
+
+### Implementation Rules
+
+- Reuse existing font declarations where available.
+- Do not introduce duplicate font imports.
+- Do not create unnecessary font-face declarations.
+- Verify that the existing project correctly loads both typefaces.
+- Avoid fallback choices that create significant differences in text proportions.
+- Ensure the website remains readable if external font loading fails.
+
+---
+
+# 6. Typography Structure
+
+The typography system should follow a consistent hierarchy.
+
+Recommended categories include:
+
+- Display
+- Headline
+- Title
+- Body
+- Label
+- Caption
+
+These categories describe typography roles, not necessarily the exact names of existing CSS tokens.
+
+The implementation must use the actual typography tokens discovered in `design-tokens.css`.
+
+## 6.1 Display
+
+Used for:
+
+- Homepage hero headline
+- Major introductory statements
+- Prominent editorial messages
+- Large featured quotations
+
+Typeface: Cormorant Garamond.
+
+Display text should feel expressive, confident, spacious, and memorable.
+
+## 6.2 Headline
+
+Used for:
+
+- Main section headings
+- Page introductions
+- Major content headings
+- Featured editorial statements
+
+Typeface: Primarily Cormorant Garamond.
+
+Headline typography should create strong separation between major content sections.
+
+## 6.3 Title
+
+Used for:
+
+- Subsection headings
+- Featured content titles
+- Writing titles
+- Grouped content headings
+- Supporting editorial headings
+
+Typeface: Primarily Cormorant Garamond, with DM Sans where a more functional or compact treatment is appropriate.
+
+## 6.4 Body
+
+Used for:
+
+- Biography paragraphs
+- Professional experience descriptions
+- Service and advisory descriptions
+- Speaking information
+- Article summaries
+- Long-form editorial content
+- Supporting explanations
+
+Typeface: DM Sans.
+
+Body typography must prioritise readability, comfortable line spacing, and clear paragraph structure.
+
+## 6.5 Label
+
+Used for:
+
+- Navigation items
+- Buttons
+- Metadata
+- Categories
+- Small interface descriptions
+- Form labels
+- Section identifiers
+
+Typeface: DM Sans.
+
+Labels should remain compact, legible, and consistent.
+
+## 6.6 Caption
+
+Used for:
+
+- Image descriptions
+- Photography captions
+- Supporting notes
+- Publication metadata
+- Dates and contextual information
+
+Typeface: DM Sans.
+
+Caption typography should remain readable and visually subordinate to the main content.
+
+---
+
+# 7. Typography Usage Guidelines
+
+## 7.1 Hero Typography
+
+The homepage hero is one of the most important typographic moments on the website.
+
+The brand headline is:
+
+**Big Ideas, Real Impact.**
+
+Use Cormorant Garamond for the main headline.
+
+Use DM Sans for:
+
+- Supporting introduction
+- Explanatory text
+- Calls to action
+- Navigation
+- Supporting information
+
+### Hero Design Principles
+
+- Establish a strong visual hierarchy between the headline and supporting copy.
+- Allow the headline sufficient space.
+- Use deliberate line breaks.
+- Avoid unnecessarily long headline lines.
+- Ensure the headline remains balanced across screen sizes.
+- Avoid excessive font-weight variation.
+- Maintain strong contrast against the background.
+- Do not use excessive decorative typography effects.
+
+The hero should feel like an editorial introduction to an experienced executive leader.
+
+## 7.2 Section Headings
+
+Use Cormorant Garamond for prominent section headings.
+
+Examples include:
+
+- About Me
+- Work With Me
+- Speaking
+- Writing
+- Contact Me
+
+Section headings should feel distinctive without becoming visually overwhelming.
+
+Use DM Sans for any supporting section descriptions or introductory paragraphs.
+
+## 7.3 Body Content
+
+Use DM Sans for general content.
+
+This includes:
+
+- Professional biography
+- Leadership experience
+- Areas of expertise
+- Advisory and partnership descriptions
+- Professional achievements
+- Supporting explanations
+
+### Body Text Principles
+
+- Maintain comfortable reading widths.
+- Use appropriate line-height.
+- Avoid excessively long paragraphs.
+- Break content into meaningful sections.
+- Use paragraph spacing to improve scanning.
+- Avoid unnecessary bolding and italicisation.
+- Maintain consistent text alignment.
+
+## 7.4 Featured Quotes
+
+Use Cormorant Garamond for selected prominent quotations or editorial statements.
+
+Use DM Sans for attribution and supporting details.
+
+Do not create quotations or attribute statements to the client without verified source material.
+
+## 7.5 Navigation and Buttons
+
+Use DM Sans for all navigation and button labels.
+
+Navigation should feel:
+
+- Clear
+- Refined
+- Compact
+- Professional
+- Easy to scan
+
+Avoid decorative serif typography for functional navigation elements.
+
+## 7.6 Writing Section
+
+The Writing section should feel like a refined editorial publication.
+
+Use:
+
+- Cormorant Garamond for article and publication titles.
+- DM Sans for article descriptions, metadata, dates, categories, and supporting content.
+
+Maintain comfortable reading widths and clear distinctions between titles, summaries, and metadata.
+
+---
+
+# 8. Type Scale and Sizing Rules
+
+Typography must follow a consistent scale.
+
+The exact font sizes must be derived from the existing typography tokens in `design-tokens.css`.
+
+Do not invent arbitrary font-size values or create a separate scale without first inspecting the existing design system.
+
+### Recommended hierarchy
+
+- Display: Largest and most expressive typography.
+- Headline: Major section and page headings.
+- Title: Subsection and content headings.
+- Body: Main reading text.
+- Label: Navigation and functional interface text.
+- Caption: Supporting metadata and secondary information.
+
+### Type Scale Principles
+
+- Maintain proportional relationships between hierarchy levels.
+- Ensure headings are clearly distinguishable from body text.
+- Avoid unnecessarily large supporting headings.
+- Avoid excessively small body text.
+- Preserve a consistent scale across sections.
+- Use responsive scaling where appropriate.
+
+Typography should establish a predictable visual rhythm throughout the website.
+
+---
+
+# 9. Font Weight Rules
+
+Font weight should reinforce hierarchy without creating unnecessary visual complexity.
+
+Use the available font weights defined by the existing project and loaded font files.
+
+### General principles
+
+- Display headings should use an appropriate weight that preserves the elegance of Cormorant Garamond.
+- Major headings should have sufficient visual presence.
+- Body text should remain comfortable to read.
+- Navigation and labels should remain clear.
+- Bold weight should be reserved for meaningful emphasis.
+- Avoid using too many different weights within one section.
+
+Do not assume that every font weight is available.
+
+Verify the actual font files and existing font declarations before referencing specific weights.
+
+---
+
+# 10. Line Height and Letter Spacing
+
+Line-height and letter spacing must support readability and visual balance.
+
+### Display Typography
+
+- Use a controlled line-height that allows large headings to feel cohesive.
+- Avoid excessive spacing between lines.
+- Adjust line breaks to create intentional compositions.
+- Use letter spacing carefully, particularly with large serif headings.
+
+### Body Typography
+
+- Use comfortable line-height for paragraphs.
+- Maintain sufficient separation between paragraphs.
+- Avoid compressed body text.
+- Ensure long-form content remains comfortable to read.
+
+### Navigation and Labels
+
+- Maintain consistent line-height.
+- Use restrained letter spacing.
+- Avoid excessive tracking that makes functional labels difficult to scan.
+
+### Implementation
+
+Use the existing line-height and letter-spacing tokens in `design-tokens.css`.
+
+Do not hardcode inconsistent values across individual components.
+
+---
+
+# 11. Readability and Content Rhythm
+
+Typography must support extended reading sessions and comfortable content scanning.
+
+Requirements:
+
+- Maintain readable line lengths.
+- Avoid dense text blocks.
+- Use consistent paragraph spacing.
+- Create clear heading-to-paragraph relationships.
+- Maintain sufficient spacing between content groups.
+- Use appropriate line-height.
+- Avoid unnecessary uppercase text.
+- Ensure captions and metadata remain legible.
+- Maintain sufficient contrast against all backgrounds.
+
+### Long-Form Content
+
+The About Me and Writing sections may contain longer editorial content.
+
+For these sections:
+
+- Avoid excessively wide paragraphs.
+- Use meaningful subheadings where appropriate.
+- Break long content into digestible sections.
+- Maintain a consistent reading rhythm.
+- Avoid unnecessary text decoration.
+- Keep supporting metadata visually subordinate.
+
+Typography should make the content feel approachable rather than overwhelming.
+
+---
+
+# 12. Responsive Typography
+
+Typography must adapt appropriately across:
+
+- Desktop
+- Tablet
+- Mobile
+
+The website is expected to provide a refined experience across different screen sizes.
+
+### Desktop
+
+- Use display typography confidently.
+- Preserve strong headline hierarchy.
+- Allow sufficient whitespace around major headings.
+- Maintain comfortable paragraph widths.
+- Avoid excessively long text lines.
+
+### Tablet
+
+- Adjust display sizes and line breaks where necessary.
+- Preserve heading hierarchy.
+- Maintain balanced content proportions.
+- Prevent text from becoming crowded.
+
+### Mobile
+
+- Scale display typography appropriately.
+- Prevent oversized headlines from dominating the viewport.
+- Avoid awkward single-word line breaks.
+- Maintain comfortable body text sizing.
+- Preserve readable paragraph widths.
+- Ensure navigation and buttons remain legible.
+- Avoid horizontal overflow.
+
+### Responsive Scaling
+
+Use CSS `clamp()` where appropriate for fluid typography.
+
+However:
+
+- Base typography values on existing design tokens.
+- Inspect the current responsive token structure first.
+- Do not introduce arbitrary responsive values.
+- Ensure text scaling remains controlled across breakpoints.
+- Test actual rendered layouts rather than relying only on calculated values.
+
+Typography must feel intentional on mobile, not like a reduced desktop layout.
+
+---
+
+# 13. Typography and Brand Colour Relationship
+
+Typography must work in harmony with the official four-colour brand palette.
+
+The approved colours are:
+
+- Navy: `#1E2A44`
+- Rust: `#9E340C`
+- Ochre: `#D9A65A`
+- Cream: `#F4F0E7`
+
+### General Application
+
+- Use Navy for primary typography on Cream backgrounds.
+- Use Cream for typography on Navy backgrounds.
+- Use Rust selectively for short editorial emphasis or interactive text where contrast permits.
+- Avoid using Ochre for small text on light backgrounds unless accessibility requirements are satisfied.
+- Maintain sufficient contrast between text and its background.
+- Do not use colour alone to create typographic hierarchy.
+
+The hierarchy should primarily come from font family, size, weight, spacing, and positioning.
+
+Refer to `color.md` for the complete colour application and accessibility rules.
+
+---
+
+# 14. Accessibility Rules
+
+Typography must support accessible reading and interaction.
+
+Requirements:
+
+- Maintain sufficient text contrast.
+- Use semantic heading levels.
+- Preserve a logical heading hierarchy.
+- Support browser text scaling.
+- Avoid text embedded in images where real text is possible.
+- Avoid excessively small text.
+- Maintain comfortable line spacing.
+- Ensure interactive labels are readable.
+- Do not communicate essential information through typography styling alone.
+
+### Heading Semantics
+
+Use semantic HTML headings in a logical order.
+
+- H1: Primary page heading.
+- H2: Major page sections.
+- H3: Subsections within major sections.
+- H4 and below: Additional nested content where necessary.
+
+Do not select heading tags solely because their default visual size looks appropriate.
+
+Use CSS classes and typography tokens to control appearance independently of semantic heading levels.
+
+### Text Scaling
+
+The website should remain usable when users increase browser text size.
+
+Avoid fixed-height containers that clip enlarged text.
+
+Ensure responsive layouts can accommodate text wrapping and scaling.
+
+---
+
+# 15. Measurement Rules
+
+Typography implementation should prioritise scalable CSS units.
+
+Preferred units include:
+
+- `rem` for font sizes and scalable spacing.
+- `em` where sizing should relate to the parent element.
+- `%` where appropriate for fluid layout relationships.
+- `clamp()` for controlled responsive typography.
+
+Avoid unnecessary fixed pixel values for scalable typography.
+
+Use the existing token definitions wherever possible.
+
+The objective is to maintain consistency, accessibility, and predictable responsive behaviour.
+
+---
+
+# 16. Typography Consistency Across Website Sections
+
+The same typography roles must be maintained throughout the six main website sections.
+
+### Home
+
+- Cormorant Garamond: Hero headline and prominent introductory statements.
+- DM Sans: Supporting introduction, navigation, buttons, and labels.
+
+### About Me
+
+- Cormorant Garamond: Main heading and selected editorial statements.
+- DM Sans: Biography, professional experience, and supporting content.
+
+### Work With Me
+
+- Cormorant Garamond: Main heading and prominent capability headings.
+- DM Sans: Advisory descriptions, collaboration information, and supporting explanations.
+
+### Speaking
+
+- Cormorant Garamond: Main heading and selected featured statements.
+- DM Sans: Speaking descriptions, event information, metadata, and supporting content.
+
+### Writing
+
+- Cormorant Garamond: Publication titles, article headings, and selected editorial highlights.
+- DM Sans: Article summaries, dates, categories, and metadata.
+
+### Contact Me
+
+- Cormorant Garamond: Main contact heading and prominent introductory statements.
+- DM Sans: Contact information, links, button labels, and supporting text.
+
+Typography should remain consistent without making every section look identical.
+
+---
+
+# 17. Prohibited Typography Practices
+
+The following practices are prohibited:
+
+- Introducing unrelated font families.
+- Replacing Cormorant Garamond or DM Sans without approval.
+- Using Cormorant Garamond indiscriminately for body content.
+- Using DM Sans for every prominent display heading.
+- Arbitrary font sizes outside the approved token system.
+- Duplicating existing font declarations.
+- Creating a competing typography system.
+- Excessive font-weight variation.
+- Excessive letter spacing.
+- Overly decorative text treatments.
+- Inconsistent heading hierarchy.
+- Excessively long display headlines.
+- Unreadable paragraph widths.
+- Dense blocks of body text.
+- Unnecessary uppercase styling.
+- Low-contrast typography.
+- Inconsistent typography between sections.
+- Fixed-height text containers that clip content.
+- Using heading elements solely for their default visual appearance.
+
+The website must preserve a refined, editorial, readable, and consistent typographic identity.
+
+---
+
+# 18. Implementation Rules
+
+Before implementing or modifying typography:
+
+1. Inspect the existing `design-tokens.css`.
+2. Identify the actual font-family tokens.
+3. Identify the existing font-size scale.
+4. Identify the available font-weight tokens.
+5. Identify line-height and letter-spacing tokens.
+6. Confirm how Cormorant Garamond and DM Sans are loaded.
+7. Verify the available font weights.
+8. Map typography roles to existing tokens.
+9. Reuse the tokens across reusable components.
+10. Test the implementation across desktop, tablet, and mobile.
+
+### Preferred Implementation Patterns
+
+- Centralised font-family definitions.
+- Tokenised font sizes.
+- Tokenised font weights.
+- Tokenised line heights.
+- Tokenised letter spacing.
+- Responsive display typography.
+- Consistent heading styles.
+- Reusable typography classes or component styles.
+- Semantic HTML heading structure.
+
+### Important Restrictions
+
+- Do not create another typography token file.
+- Do not replace `design-tokens.css`.
+- Do not introduce duplicate font imports.
+- Do not assume token names that have not been verified.
+- Do not hardcode typography values repeatedly across components.
+- Do not modify the established font pairing without approval.
+
+If the existing token file does not contain a required typography value, identify the missing value and explain why it is necessary before proposing a change.
+
+---
+
+# 19. Typography Quality Assurance
+
+Before considering the typography system complete, review the following.
+
+### Font Family
+
+- [ ] Cormorant Garamond is used for display and editorial typography.
+- [ ] DM Sans is used for body and interface typography.
+- [ ] Both fonts load correctly.
+- [ ] Appropriate fallback stacks are available.
+- [ ] No unnecessary font families have been introduced.
+
+### Hierarchy
+
+- [ ] Display, headline, title, body, label, and caption roles are distinguishable.
+- [ ] Heading hierarchy is consistent.
+- [ ] Typography supports the content structure.
+- [ ] Font weights are used consistently.
+- [ ] Typography does not rely solely on colour to establish hierarchy.
+
+### Readability
+
+- [ ] Body text is comfortable to read.
+- [ ] Paragraph spacing is consistent.
+- [ ] Line lengths are controlled.
+- [ ] Long-form content is easy to scan.
+- [ ] Captions and metadata remain legible.
+- [ ] Text contrast meets accessibility requirements.
+
+### Responsive Behaviour
+
+- [ ] Display headings scale appropriately on desktop.
+- [ ] Typography remains balanced on tablet.
+- [ ] Headlines wrap naturally on mobile.
+- [ ] Body text remains readable on mobile.
+- [ ] No text is clipped or overflowing.
+- [ ] Browser text scaling does not break layouts.
+
+### Implementation
+
+- [ ] Existing typography tokens are reused.
+- [ ] No duplicate font declarations exist.
+- [ ] No competing typography system has been created.
+- [ ] Semantic heading levels are correctly applied.
+- [ ] Reusable components follow the same typography rules.
+
+---
+
+# 20. Final Typography Direction
+
+The final typography system must feel:
+
+- Editorial
+- Sophisticated
+- Refined
+- Readable
+- Confident
+- Timeless
+- Human-centred
+- Professionally distinctive
+
+Cormorant Garamond should provide the website's editorial character, elegance, and expressive display hierarchy.
+
+DM Sans should provide clarity, readability, consistency, and functional communication.
+
+Together, they should create a distinctive typographic identity that reflects an experienced executive leader working across social impact, philanthropy, inclusive economic growth, and cross-sector collaboration.
+
+Every typography decision must reinforce:
+
+- Brand identity
+- Professional credibility
+- Editorial quality
+- Clear hierarchy
+- Comfortable reading
+- Consistent implementation
+- Responsive accessibility
+
+Typography should strengthen the client's personal brand without distracting from her experience, ideas, achievements, and leadership story.
