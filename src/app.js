@@ -26,3 +26,4 @@ if (navList) {
     navList.style.display = expanded ? 'none' : 'flex';
   });
 }
+
