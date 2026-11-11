@@ -3,8 +3,8 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   // Serve files from the src directory
   root: 'src',
-  // No public folder needed for now
-  publicDir: false,
+  // Copy static files (robots.txt, sitemap.xml, etc.) into the build output
+  publicDir: 'public',
   build: {
     // Output the production build one level up
     outDir: '../dist',
