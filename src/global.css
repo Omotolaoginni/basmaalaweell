@@ -1,0 +1,81 @@
+@import url("../design-tokens.css");
+
+/* -------------------------------------------------
+   Base page styling – uses the token values
+   ------------------------------------------------- */
+html {
+  box-sizing: border-box;
+  font-size: 100%; /* 1rem = 16px */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Body – use the body token values */
+body {
+  margin: 0;
+  font-family: var(--sys-font-body-body-text-r-fontfamily);
+  font-size: var(--sys-font-body-body-text-r-fontsize);
+  line-height: var(--sys-font-body-body-text-r-lineheight);
+  color: var(--sys-colors-navy-blue);
+  background-color: var(--sys-colors-cream);
+}
+
+/* Simple layout helpers */
+section {
+  padding: var(--sys-spacing-spacing-12) var(--sys-spacing-spacing-6);
+}
+
+/* Header styling – use brand colours */
+#site-header {
+  background-color: var(--sys-colors-navy-blue);
+  color: var(--sys-colors-cream);
+  padding: var(--sys-spacing-spacing-6);
+}
+
+#site-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--sys-spacing-spacing-8);
+  margin: 0;
+  padding: 0;
+}
+
+#site-header nav a {
+  color: inherit;
+  text-decoration: none;
+  font-family: var(--sys-font-body-body-text-r-fontfamily);
+}
+
+/* Footer */
+#site-footer {
+  background-color: var(--sys-colors-navy-blue);
+  color: var(--sys-colors-cream);
+  text-align: center;
+  padding: var(--sys-spacing-spacing-6);
+}
+
+/* Hero headline – use the display token */
+#home h1 {
+  font-family: var(--sys-font-display-display-text-xl-fontfamily);
+  font-size: var(--sys-font-display-display-text-xl-fontsize);
+  line-height: var(--sys-font-display-display-text-xl-lineheight);
+  font-weight: var(--sys-font-display-display-text-xl-fontweight);
+  margin: 0;
+}
+
+/* Section headings – use heading token */
+section h2 {
+  font-family: var(--sys-font-heading-heading-text-1-fontfamily);
+  font-size: var(--sys-font-heading-heading-text-1-fontsize);
+  line-height: var(--sys-font-heading-heading-text-1-lineheight);
+  font-weight: var(--sys-font-heading-heading-text-1-fontweight);
+}
+
+/* Simple focus outline for accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--sys-colors-rust);
+  outline-offset: 2px;
+}
