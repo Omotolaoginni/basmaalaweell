@@ -42,6 +42,17 @@
     });
   }
 
+  /* ---------- Newsletter form (integration pending) ---------- */
+  // No subscription endpoint is connected yet. Prevent the default submit
+  // so the un-integrated form does not reload the page. Connect a real
+  // service (e.g. fetch to an endpoint) here before enabling live submissions.
+  var newsletterForm = document.querySelector('.newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+    });
+  }
+
   /* ---------- Smooth scrolling for in-page anchors ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
