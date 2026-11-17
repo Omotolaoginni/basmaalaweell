@@ -1,0 +1,427 @@
+/* ============================================================
+   Consultancy page styles
+   Builds on global.css and design-tokens.css (source of truth)
+   ============================================================ */
+
+[hidden] {
+  display: none !important;
+}
+
+.nav-link[aria-current="page"] {
+  color: var(--sys-colors-rust);
+  font-weight: var(--sys-font-body-body-text-m-fontweight);
+}
+
+/* ------------------------------------------------------------
+   1. Page intro
+   ------------------------------------------------------------ */
+.page-hero {
+  padding-top: var(--sys-spacing-spacing-19);
+  padding-bottom: var(--sys-spacing-spacing-18);
+}
+
+.page-hero-inner {
+  max-width: 880px;
+}
+
+.page-title {
+  font-family: var(--sys-font-display-display-text-fontfamily);
+  font-size: clamp(2.75rem, 7vw, var(--sys-font-heading-heading-text-1-fontsize));
+  font-weight: var(--sys-font-display-display-text-fontweight);
+  line-height: 84px;
+  letter-spacing: var(--sys-font-display-display-text-letterspacing);
+  color: var(--sys-colors-navy-blue);
+  margin: 0 0 var(--sys-spacing-spacing-10);
+}
+
+.page-title-accent {
+  font-style: italic;
+  color: var(--sys-colors-rust);
+}
+
+.page-lead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sys-spacing-spacing-6);
+}
+
+.page-lead .text-lead {
+  color: var(--sys-colors-navy-blue);
+  line-height: var(--sys-font-body-body-text-r-lineheight);
+}
+
+.page-lead .text-body {
+  color: rgba(30, 42, 68, 0.82);
+}
+
+/* ------------------------------------------------------------
+   2. Selected work & contributions
+   ------------------------------------------------------------ */
+.section-selected-work {
+  background-color: var(--sys-colors-rust);
+}
+
+.section-selected-work .heading-2 {
+  color: var(--sys-colors-cream);
+}
+
+.section-selected-work .section-heading {
+  grid-template-columns: 1fr;
+  margin-bottom: var(--sys-spacing-spacing-11);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sys-spacing-spacing-8);
+  margin-bottom: var(--sys-spacing-spacing-12);
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--sys-spacing-spacing-9);
+  background-color: var(--sys-colors-cream);
+  border: 1px solid transparent;
+  border-radius: var(--sys-radius-radius-lg);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.work-card:hover {
+  background-color: #FFFFFF;
+  border-color: var(--sys-colors-ochre);
+}
+
+.work-card-type {
+  font-family: var(--sys-font-label-label-m-fontfamily);
+  font-size: var(--sys-font-caption-caption-m-fontsize);
+  font-weight: var(--sys-font-label-label-m-fontweight);
+  letter-spacing: var(--sys-font-label-label-m-letterspacing);
+  text-transform: uppercase;
+  color: var(--sys-colors-rust);
+  margin: 0 0 var(--sys-spacing-spacing-4);
+}
+
+.work-card-title {
+  color: var(--sys-colors-navy-blue);
+  margin-bottom: var(--sys-spacing-spacing-3);
+}
+
+.work-card-meta {
+  font-family: var(--sys-font-caption-caption-r-fontfamily);
+  font-size: var(--sys-font-caption-caption-r-fontsize);
+  font-weight: var(--sys-font-caption-caption-r-fontweight);
+  line-height: 1.5;
+  color: rgba(30, 42, 68, 0.66);
+  margin: 0 0 var(--sys-spacing-spacing-5);
+}
+
+.work-card-desc {
+  color: rgba(30, 42, 68, 0.82);
+  margin-bottom: var(--sys-spacing-spacing-6);
+}
+
+.work-card .text-link {
+  margin-top: auto;
+}
+
+.work-card:hover .text-link .text-link-arrow {
+  transform: translateX(4px);
+}
+
+.confidentiality-note {
+  max-width: 760px;
+  font-family: var(--sys-font-body-body-text-m-fontfamily);
+  font-size: var(--sys-font-body-body-text-m-fontsize);
+  font-weight: var(--sys-font-body-body-text-m-fontweight);
+  line-height: 1.6;
+  letter-spacing: var(--sys-font-body-body-text-m-letterspacing);
+  color: rgba(244, 240, 231, 0.82);
+  padding-left: var(--sys-spacing-spacing-7);
+  border-left: 2px solid var(--sys-colors-ochre);
+  margin: 0;
+}
+
+/* ------------------------------------------------------------
+   3. Contact form section
+   ------------------------------------------------------------ */
+.section-contact-form {
+  background-color: var(--sys-colors-navy-blue);
+  color: var(--sys-colors-cream);
+  border-top: 1px solid rgba(244, 240, 231, 0.12);
+}
+
+.contact-form-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--sys-spacing-spacing-18);
+  align-items: start;
+}
+
+.contact-title {
+  color: var(--sys-colors-cream);
+  margin-bottom: var(--sys-spacing-spacing-6);
+}
+
+.contact-copy {
+  color: rgba(244, 240, 231, 0.85);
+  line-height: 1.6;
+}
+
+.contact-form-title {
+  color: var(--sys-colors-cream);
+  margin-bottom: var(--sys-spacing-spacing-7);
+}
+
+.consultancy-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sys-spacing-spacing-7);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sys-spacing-spacing-6);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sys-spacing-spacing-3);
+}
+
+.form-label {
+  font-family: var(--sys-font-body-body-text-m-fontfamily);
+  font-size: var(--sys-font-label-label-m-fontsize);
+  font-weight: var(--sys-font-body-body-text-m-fontweight);
+  line-height: var(--sys-font-label-label-m-lineheight);
+  letter-spacing: var(--sys-font-label-label-m-letterspacing);
+  color: var(--sys-colors-cream);
+}
+
+.form-optional {
+  font-weight: var(--sys-font-body-body-text-r-fontweight);
+  color: rgba(244, 240, 231, 0.6);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--sys-spacing-spacing-5) var(--sys-spacing-spacing-6);
+  font-family: var(--sys-font-body-body-text-r-fontfamily);
+  font-size: var(--sys-font-body-body-text-r-fontsize);
+  font-weight: var(--sys-font-body-body-text-r-fontweight);
+  line-height: var(--sys-font-body-body-text-r-lineheight);
+  color: var(--sys-colors-navy-blue);
+  background-color: #FFFFFF;
+  border: 1px solid transparent;
+  border-radius: var(--sys-radius-radius-md);
+}
+
+.form-input::placeholder {
+  color: rgba(30, 42, 68, 0.5);
+}
+
+.form-input:focus-visible {
+  outline: 2px solid var(--sys-colors-ochre);
+  outline-offset: 2px;
+}
+
+.form-input[aria-invalid="true"] {
+  border-color: var(--sys-colors-ochre);
+}
+
+.form-select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--sys-colors-navy-blue) 50%), linear-gradient(135deg, var(--sys-colors-navy-blue) 50%, transparent 50%);
+  background-position: calc(100% - 20px) 50%, calc(100% - 14px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-error {
+  font-family: var(--sys-font-body-body-text-m-fontfamily);
+  font-size: var(--sys-font-caption-caption-m-fontsize);
+  font-weight: var(--sys-font-body-body-text-m-fontweight);
+  line-height: 1.5;
+  color: var(--sys-colors-ochre);
+  margin: 0;
+}
+
+/* Dropzone */
+.dropzone {
+  position: relative;
+}
+
+.dropzone-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.dropzone-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sys-spacing-spacing-3);
+  padding: var(--sys-spacing-spacing-10) var(--sys-spacing-spacing-6);
+  text-align: center;
+  background-color: transparent;
+  border: 1px dashed rgba(244, 240, 231, 0.45);
+  border-radius: var(--sys-radius-radius-md);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.dropzone-label:hover,
+.dropzone.is-dragover .dropzone-label {
+  border-color: var(--sys-colors-ochre);
+  background-color: rgba(217, 166, 90, 0.08);
+}
+
+.dropzone-input:focus-visible + .dropzone-label {
+  outline: 2px solid var(--sys-colors-ochre);
+  outline-offset: 2px;
+}
+
+.dropzone-text {
+  font-family: var(--sys-font-body-body-text-r-fontfamily);
+  font-size: var(--sys-font-body-body-text-r-fontsize);
+  font-weight: var(--sys-font-body-body-text-r-fontweight);
+  line-height: var(--sys-font-body-body-text-r-lineheight);
+  color: rgba(244, 240, 231, 0.9);
+  margin: 0;
+}
+
+.dropzone-browse {
+  color: var(--sys-colors-ochre);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dropzone-hint {
+  font-family: var(--sys-font-caption-caption-r-fontfamily);
+  font-size: var(--sys-font-caption-caption-r-fontsize);
+  font-weight: var(--sys-font-caption-caption-r-fontweight);
+  line-height: 1.5;
+  color: rgba(244, 240, 231, 0.6);
+  margin: 0;
+}
+
+.file-list {
+  list-style: none;
+  margin: var(--sys-spacing-spacing-4) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sys-spacing-spacing-3);
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sys-spacing-spacing-4);
+  padding: var(--sys-spacing-spacing-4) var(--sys-spacing-spacing-5);
+  background-color: rgba(244, 240, 231, 0.08);
+  border: 1px solid rgba(244, 240, 231, 0.2);
+  border-radius: var(--sys-radius-radius-md);
+}
+
+.file-item-name {
+  font-family: var(--sys-font-body-body-text-m-fontfamily);
+  font-size: var(--sys-font-label-label-m-fontsize);
+  font-weight: var(--sys-font-body-body-text-m-fontweight);
+  color: var(--sys-colors-cream);
+  word-break: break-word;
+}
+
+.file-item-size {
+  font-family: var(--sys-font-caption-caption-r-fontfamily);
+  font-size: var(--sys-font-caption-caption-r-fontsize);
+  color: rgba(244, 240, 231, 0.6);
+  margin-left: var(--sys-spacing-spacing-2);
+}
+
+.file-remove {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: none;
+  border: 1px solid rgba(244, 240, 231, 0.3);
+  border-radius: var(--sys-radius-radius-full);
+  color: var(--sys-colors-cream);
+  font-size: 16px;
+  line-height: 1;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.file-remove:hover {
+  background-color: var(--sys-colors-rust);
+  border-color: var(--sys-colors-rust);
+}
+
+.form-actions {
+  margin-top: var(--sys-spacing-spacing-4);
+}
+
+.form-actions .button {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.section-contact-form .button-primary:hover {
+  background-color: var(--sys-colors-cream);
+  border-color: var(--sys-colors-cream);
+  color: var(--sys-colors-navy-blue);
+}
+
+.form-status {
+  font-family: var(--sys-font-body-body-text-m-fontfamily);
+  font-size: var(--sys-font-label-label-m-fontsize);
+  color: var(--sys-colors-ochre);
+  margin: 0;
+}
+
+/* ------------------------------------------------------------
+   4. Responsive
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .contact-form-inner {
+    gap: var(--sys-spacing-spacing-11);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding-top: var(--sys-spacing-spacing-17);
+    padding-bottom: var(--sys-spacing-spacing-16);
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-inner {
+    grid-template-columns: 1fr;
+    gap: var(--sys-spacing-spacing-11);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

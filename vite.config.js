@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'node:path';
 
 export default defineConfig({
   // Serve files from the src directory
@@ -9,8 +10,14 @@ export default defineConfig({
     // Output the production build one level up
     outDir: '../dist',
     emptyOutDir: true,
-    // Vite can locate index.html automatically when root is set,
-    // so we don't need explicit rollupOptions.input here.
+    rollupOptions: {
+      input: {
+        main: resolve(import.meta.dirname, 'src/index.html'),
+        consultancy: resolve(import.meta.dirname, 'src/consultancy.html'),
+        work: resolve(import.meta.dirname, 'src/work.html'),
+        speaking: resolve(import.meta.dirname, 'src/speaking.html'),
+        writing: resolve(import.meta.dirname, 'src/writing.html'),
+      },
+    },
   },
 });
-
