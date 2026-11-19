@@ -1153,6 +1153,13 @@ main section[id] {
   border-radius: 0;
 }
 
+.marquee-track .spoken-logo {
+  height: 22px;
+  width: auto;
+  max-height: none;
+  max-width: 84px;
+}
+
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }

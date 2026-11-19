@@ -9,7 +9,7 @@
   <meta name="description" content="Basma Alawee brings more than 15 years of experience to consultancy and strategic advisory across social impact, refugee inclusion, philanthropy, programme development, strategic partnerships and systems change.">
   <meta name="author" content="Basma Alawee">
   <link rel="canonical" href="https://basmaalawee.com/consultancy.html">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, nofollow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -89,16 +89,23 @@
             </div>
 
             <div class="form-field">
-              <label class="form-label" for="cf-need">What are you looking for?</label>
-              <select class="form-input form-select" id="cf-need" name="need">
-                <option value="" selected>Select an option</option>
-                <option>Strategic advisory &amp; organisational leadership</option>
-                <option>Programme development &amp; implementation</option>
-                <option>Refugee inclusion &amp; community sponsorship</option>
-                <option>Philanthropy, fundraising &amp; resource mobilisation</option>
-                <option>Cross-sector partnerships &amp; systems change</option>
-                <option>Something else</option>
-              </select>
+              <label class="form-label" id="cf-need-label">What are you looking for?</label>
+              <div class="custom-select">
+                <button type="button" class="form-input custom-select-trigger" id="cf-need-button" aria-haspopup="listbox" aria-expanded="false" aria-controls="cf-need-listbox" aria-labelledby="cf-need-label cf-need-value">
+                  <span class="custom-select-value is-placeholder" id="cf-need-value">Select an option</span>
+                  <svg class="custom-select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <ul class="custom-select-menu" id="cf-need-listbox" role="listbox" aria-labelledby="cf-need-label" hidden>
+                  <li class="custom-select-option" id="cf-need-opt-0" role="option" aria-selected="true" data-value="">Select an option</li>
+                  <li class="custom-select-option" id="cf-need-opt-1" role="option" aria-selected="false" data-value="Strategic advisory &amp; organisational leadership">Strategic advisory &amp; organisational leadership</li>
+                  <li class="custom-select-option" id="cf-need-opt-2" role="option" aria-selected="false" data-value="Programme development &amp; implementation">Programme development &amp; implementation</li>
+                  <li class="custom-select-option" id="cf-need-opt-3" role="option" aria-selected="false" data-value="Refugee inclusion &amp; community sponsorship">Refugee inclusion &amp; community sponsorship</li>
+                  <li class="custom-select-option" id="cf-need-opt-4" role="option" aria-selected="false" data-value="Philanthropy, fundraising &amp; resource mobilisation">Philanthropy, fundraising &amp; resource mobilisation</li>
+                  <li class="custom-select-option" id="cf-need-opt-5" role="option" aria-selected="false" data-value="Cross-sector partnerships &amp; systems change">Cross-sector partnerships &amp; systems change</li>
+                  <li class="custom-select-option" id="cf-need-opt-6" role="option" aria-selected="false" data-value="Something else">Something else</li>
+                </ul>
+              </div>
+              <input type="hidden" name="need" id="cf-need" value="" />
             </div>
 
             <div class="form-field">

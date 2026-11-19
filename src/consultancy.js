@@ -37,6 +37,148 @@
     });
   }
 
+  /* ---------- Contact-only view (nav "Contact" link) ---------- */
+  function applyContactOnly() {
+    var contactOnly = window.location.hash === '#contact';
+    document.body.classList.toggle('is-contact-only', contactOnly);
+  }
+
+  applyContactOnly();
+  window.addEventListener('hashchange', applyContactOnly);
+
+  /* ---------- Custom dropdown (replaces native select) ---------- */
+  var needSelect = document.getElementById('cf-need');
+  var needButton = document.getElementById('cf-need-button');
+  var needListbox = document.getElementById('cf-need-listbox');
+  var needValue = document.getElementById('cf-need-value');
+
+  if (needSelect && needButton && needListbox && needValue) {
+    var needOptions = Array.prototype.slice.call(needListbox.querySelectorAll('[role="option"]'));
+    var needOpen = false;
+    var needActiveIndex = 0;
+
+    function needSelectedIndex() {
+      var val = needSelect.value;
+      for (var i = 0; i < needOptions.length; i++) {
+        if (needOptions[i].getAttribute('data-value') === val) return i;
+      }
+      return -1;
+    }
+
+    function needSetActive(index) {
+      needActiveIndex = index;
+      needOptions.forEach(function (opt, i) {
+        opt.classList.toggle('is-active', i === index);
+      });
+      needButton.setAttribute('aria-activedescendant', needOptions[index].id);
+    }
+
+    function needRender() {
+      var idx = needSelectedIndex();
+      var text = idx >= 0 ? needOptions[idx].textContent.trim() : 'Select an option';
+      needValue.textContent = text;
+      needValue.classList.toggle('is-placeholder', needSelect.value === '');
+      needOptions.forEach(function (opt, i) {
+        var selected = i === idx;
+        opt.classList.toggle('is-selected', selected);
+        opt.setAttribute('aria-selected', selected ? 'true' : 'false');
+      });
+    }
+
+    function needOpenMenu() {
+      needOpen = true;
+      needButton.setAttribute('aria-expanded', 'true');
+      needButton.classList.add('is-open');
+      needListbox.hidden = false;
+      var idx = needSelectedIndex();
+      needSetActive(idx >= 0 ? idx : 0);
+    }
+
+    function needCloseMenu(focusTrigger) {
+      needOpen = false;
+      needButton.setAttribute('aria-expanded', 'false');
+      needButton.classList.remove('is-open');
+      needButton.removeAttribute('aria-activedescendant');
+      needListbox.hidden = true;
+      if (focusTrigger) needButton.focus();
+    }
+
+    function needSelectOption(index) {
+      if (index < 0 || index >= needOptions.length) return;
+      needSelect.value = needOptions[index].getAttribute('data-value');
+      needRender();
+      needCloseMenu(true);
+    }
+
+    needButton.addEventListener('click', function (e) {
+      if (e.detail === 0) return; // ignore keyboard-generated clicks
+      if (needOpen) { needCloseMenu(false); } else { needOpenMenu(); }
+    });
+
+    needOptions.forEach(function (opt, index) {
+      opt.addEventListener('click', function () {
+        needSelectOption(index);
+      });
+      opt.addEventListener('mousemove', function () {
+        if (needOpen && needActiveIndex !== index) needSetActive(index);
+      });
+    });
+
+    needButton.addEventListener('keydown', function (e) {
+      var key = e.key;
+
+      if (key === 'ArrowDown' || key === 'Enter' || key === ' ') {
+        if (!needOpen) {
+          e.preventDefault();
+          needOpenMenu();
+          return;
+        }
+      }
+
+      if (!needOpen) return;
+
+      if (key === 'ArrowDown') {
+        e.preventDefault();
+        needSetActive((needActiveIndex + 1) % needOptions.length);
+      } else if (key === 'ArrowUp') {
+        e.preventDefault();
+        needSetActive((needActiveIndex - 1 + needOptions.length) % needOptions.length);
+      } else if (key === 'Home') {
+        e.preventDefault();
+        needSetActive(0);
+      } else if (key === 'End') {
+        e.preventDefault();
+        needSetActive(needOptions.length - 1);
+      } else if (key === 'Enter' || key === ' ') {
+        e.preventDefault();
+        needSelectOption(needActiveIndex);
+      } else if (key === 'Escape') {
+        e.preventDefault();
+        needCloseMenu(true);
+      } else if (key === 'Tab') {
+        needCloseMenu(false);
+      } else if (key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        var ch = key.toLowerCase();
+        for (var i = 0; i < needOptions.length; i++) {
+          var label = needOptions[i].textContent.trim().toLowerCase();
+          if (label.charAt(0) === ch) {
+            e.preventDefault();
+            needSetActive(i);
+            break;
+          }
+        }
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      if (needOpen && !needButton.contains(e.target) && !needListbox.contains(e.target)) {
+        needCloseMenu(false);
+      }
+    });
+
+    needRender();
+  }
+
   /* ---------- Contact form ---------- */
   var form = document.getElementById('consultancy-form');
   if (!form) return;
