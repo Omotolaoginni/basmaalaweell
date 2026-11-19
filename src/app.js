@@ -42,6 +42,32 @@
     });
   }
 
+  /* ---------- Marquee (Who I've worked with logo strip) ---------- */
+  var marqueeTrack = document.querySelector('.marquee-track');
+  if (marqueeTrack) {
+    var marqueeContainer = marqueeTrack.parentElement;
+    var baseItems = Array.prototype.slice.call(marqueeTrack.children);
+
+    if (baseItems.length && !prefersReducedMotion) {
+      var cloneItems = function (items) {
+        items.forEach(function (item) {
+          var clone = item.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          marqueeTrack.appendChild(clone);
+        });
+      };
+
+      // Duplicate at least once, then keep doubling until the track is
+      // wide enough for a seamless -50% translate loop.
+      cloneItems(baseItems);
+      var guard = 0;
+      while (marqueeTrack.scrollWidth < marqueeContainer.clientWidth * 2 && guard < 10) {
+        cloneItems(Array.prototype.slice.call(marqueeTrack.children));
+        guard++;
+      }
+    }
+  }
+
   /* ---------- Newsletter form (integration pending) ---------- */
   // No subscription endpoint is connected yet. Prevent the default submit
   // so the un-integrated form does not reload the page. Connect a real

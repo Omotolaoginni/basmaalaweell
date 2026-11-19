@@ -31,4 +31,27 @@
       }
     });
   }
+
+  /* ---------- Category filter ---------- */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var filterSections = document.querySelectorAll('[data-category]');
+
+  if (filterBtns.length && filterSections.length) {
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var filter = btn.getAttribute('data-filter');
+
+        filterBtns.forEach(function (b) {
+          var isActive = b === btn;
+          b.classList.toggle('is-active', isActive);
+          b.setAttribute('aria-pressed', String(isActive));
+        });
+
+        filterSections.forEach(function (section) {
+          var match = filter === 'all' || section.getAttribute('data-category') === filter;
+          section.hidden = !match;
+        });
+      });
+    });
+  }
 })();

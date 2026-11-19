@@ -17,7 +17,7 @@
    ------------------------------------------------------------ */
 .page-hero {
   padding-top: var(--sys-spacing-spacing-19);
-  padding-bottom: var(--sys-spacing-spacing-18);
+  padding-bottom: var(--sys-spacing-spacing-9);
 }
 
 .page-hero-inner {
@@ -98,6 +98,53 @@
 
 .work-category--ochre .category-sub {
   color: rgba(30, 42, 68, 0.8);
+}
+
+/* ------------------------------------------------------------
+   3b. Category filter bar
+   ------------------------------------------------------------ */
+.filter-bar {
+  padding-bottom: var(--sys-spacing-spacing-9);
+}
+
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sys-spacing-spacing-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-btn {
+  font-family: var(--sys-font-body-body-text-m-fontfamily);
+  font-size: var(--sys-font-label-label-m-fontsize);
+  font-weight: var(--sys-font-body-body-text-m-fontweight);
+  line-height: 1;
+  letter-spacing: var(--sys-font-label-label-m-letterspacing);
+  padding: var(--sys-spacing-spacing-4) var(--sys-spacing-spacing-6);
+  border-radius: var(--sys-radius-radius-full);
+  border: 1px solid rgba(30, 42, 68, 0.22);
+  background-color: transparent;
+  color: var(--sys-colors-navy-blue);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--sys-colors-rust);
+  color: var(--sys-colors-rust);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--sys-colors-rust);
+  outline-offset: 2px;
+}
+
+.filter-btn.is-active {
+  background-color: var(--sys-colors-rust);
+  border-color: var(--sys-colors-rust);
+  color: var(--sys-colors-cream);
 }
 
 /* ------------------------------------------------------------
